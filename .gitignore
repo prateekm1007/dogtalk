@@ -1,0 +1,13 @@
+node_modules/
+.expo/
+.bundle/
+dist/
+build/
+*.keystore
+*.jks
+*.p12
+*.p8
+*.mobileprovision
+.DS_Store
+yarn.lock
+package-lock.json
