@@ -1,29 +1,56 @@
 {
   "expo": {
-    "name": "DogTalk \u2013 AI Dog Language Decoder",
+    "name": "DogTalk - AI Dog Language Decoder",
     "slug": "dogtalk",
-    "scheme": "dogtalk",
-    "version": "1.0.0",
+    "version": "4.9.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FFFFFF"
+      "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+
+    "assetBundlePatterns": ["**/*"],
+
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dogtalk.app"
     },
+
     "android": {
-      "package": "com.prateekm1.dogtalk",
+      "package": "com.dogtalk.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "RECORD_AUDIO",
+        "READ_MEDIA_AUDIO"
+      ]
     },
-    "plugins": []
+
+    "plugins": [
+      "expo-router",
+      "expo-sharing",
+      "expo-file-system",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "kotlinVersion": "1.9.23"
+          }
+        }
+      ]
+    ],
+
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
+    }
   }
 }
