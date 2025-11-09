@@ -5,6 +5,9 @@
         "projectId": "989bb235-f441-43cd-bdbd-0c9da6af6616"
       }
     },
-    "owner": "prateekm1007"
+    "owner": "prateekm1007",
+    "android": {
+      "package": "com.prateekm1007.dogtalkv49"
+    }
   }
 }
