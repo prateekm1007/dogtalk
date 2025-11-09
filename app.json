@@ -1,10 +1,13 @@
 {
   "expo": {
-    "name": "DogTalk - AI Dog Language Decoder",
+    "name": "DogTalk – AI Dog Language",
     "slug": "dogtalk",
     "version": "4.9.0",
+    "scheme": "dogtalk",
     "orientation": "portrait",
+    "platforms": ["ios", "android"],
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
 
     "splash": {
       "image": "./assets/splash.png",
@@ -12,44 +15,59 @@
       "backgroundColor": "#ffffff"
     },
 
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "DogTalk needs access to your camera roll to analyze dog sounds from videos."
+        }
+      ],
+      "expo-sharing"
+    ],
+
+    "experiments": {
+      "tsconfigPaths": true
+    },
+
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD"
+    },
+
     "assetBundlePatterns": ["**/*"],
 
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.dogtalk.app"
+      "bundleIdentifier": "com.prateekm1007.dogtalk",
+      "infoPlist": {
+        "NSCameraUsageDescription": "DogTalk needs camera access to record your dog's sounds.",
+        "NSMicrophoneUsageDescription": "DogTalk uses the microphone to listen and decode dog sounds."
+      }
     },
 
     "android": {
-      "package": "com.dogtalk.app",
+      "package": "com.prateekm1007.dogtalk",
+      "permissions": [
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "permissions": [
-        "RECORD_AUDIO",
-        "READ_MEDIA_AUDIO"
-      ]
+      }
     },
 
-    "plugins": [
-      "expo-router",
-      "expo-sharing",
-      "expo-file-system",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "compileSdkVersion": 34,
-            "targetSdkVersion": 34,
-            "kotlinVersion": "1.9.23"
-          }
-        }
-      ]
-    ],
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
 
     "extra": {
-      "eas": {
-        "projectId": "YOUR_EAS_PROJECT_ID"
+      "router": {
+        "origin": "expo-router"
       }
     }
   }
