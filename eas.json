@@ -4,21 +4,17 @@
       "android": {
         "buildType": "apk"
       },
-      "hooks": {
-        "postPrebuild": {
-          "command": "node scripts/fix-settings-gradle.js"
-        }
+      "env": {
+        "NODE_ENV": "production"
       }
     },
     "preview": {
       "android": {
         "buildType": "apk"
-      },
-      "hooks": {
-        "postPrebuild": {
-          "command": "node scripts/fix-settings-gradle.js"
-        }
       }
     }
+  },
+  "hooks": {
+    "postPrebuild": "node scripts/fix-settings-gradle.js"
   }
 }
