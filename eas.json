@@ -1,21 +1,20 @@
 {
-  "cli": {
-    "version": ">= 3.6.0"
-  },
   "build": {
     "production": {
-      "env": {
-        "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
-      },
       "android": {
-        "buildType": "apk"
-      },
-      "ios": {
-        "simulator": false
+        "buildType": "apk",
+        "hooks": {
+          "postPrebuild": "node scripts/fix-settings-gradle.js"
+        }
+      }
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk",
+        "hooks": {
+          "postPrebuild": "node scripts/fix-settings-gradle.js"
+        }
       }
     }
-  },
-  "submit": {
-    "production": {}
   }
 }
