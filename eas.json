@@ -2,17 +2,21 @@
   "build": {
     "production": {
       "android": {
-        "buildType": "apk",
-        "hooks": {
-          "postPrebuild": "node scripts/fix-settings-gradle.js"
+        "buildType": "apk"
+      },
+      "hooks": {
+        "postPrebuild": {
+          "command": "node scripts/fix-settings-gradle.js"
         }
       }
     },
     "preview": {
       "android": {
-        "buildType": "apk",
-        "hooks": {
-          "postPrebuild": "node scripts/fix-settings-gradle.js"
+        "buildType": "apk"
+      },
+      "hooks": {
+        "postPrebuild": {
+          "command": "node scripts/fix-settings-gradle.js"
         }
       }
     }
