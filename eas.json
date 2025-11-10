@@ -2,19 +2,17 @@
   "build": {
     "production": {
       "android": {
-        "buildType": "apk"
-      },
-      "env": {
-        "NODE_ENV": "production"
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease",
+        "prebuildCommand": "npm run prebuild"
       }
     },
     "preview": {
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease",
+        "prebuildCommand": "npm run prebuild"
       }
     }
-  },
-  "hooks": {
-    "postPrebuild": "node scripts/fix-settings-gradle.js"
   }
 }
